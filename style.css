@@ -1,0 +1,272 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  cursor: pointer;
+}
+
+body {
+  background-color: #111321;
+}
+
+.weather-card {
+  margin: 0 auto;
+  color: #fff;
+  background: #4440f7;
+  border-radius: 4px;
+  width: 395px;
+  height: 675px;
+  position: relative;
+  overflow: hidden;
+    /* background-image: url("./images/waterdrop.png"); */
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.weather-card::before {
+  content: "";
+  background-image: url("./images/sport-smoke.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 2900px;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 1;
+  animation: move 40s linear infinite alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-1150px);
+  }
+  to {
+    transform: translateX(370px);
+  }
+}
+
+.weather__header {
+  padding-left: 53px;
+  padding-right: 53px;
+  padding-top: 40px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  z-index: 4;
+}
+
+.weather__temperature {
+  filter: drop-shadow(3px 5px 5px #000);
+  display: flex;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 75px;
+  border-right: 1px solid #fff;
+  align-items: center;
+}
+
+.weather__temperature span {
+  margin-right: 8px;
+}
+
+.weather__img {
+  filter: drop-shadow(3px 5px 5px #000);
+  align-items: center;
+  margin: 0 auto;
+  max-width: 70%;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 0;
+}
+
+.weather__location {
+  display: flex;
+  align-items: center;
+  background: rgba(254, 254, 255, 0.3);
+  border-radius: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  padding: 10px 16px;
+}
+
+.weather__description {
+  margin-left: 8px;
+}
+
+.description {
+  filter: drop-shadow(3px 5px 5px #000);
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  color: #ffffff;
+}
+
+.location__svg {
+  margin-right: 8px;
+  align-items: center;
+}
+
+/* .weather__city {
+    padding-top: 10px;
+    padding-right: 10px;
+} */
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.weather-details .humidity,
+.weather-details .wind {
+  display: flex;
+  align-items: center;
+}
+
+.current-date {
+  filter: drop-shadow(3px 5px 5px #000);
+
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+}
+
+.weather-details i {
+  font-size: 26px;
+  margin-right: 10px;
+  margin-top: 6px;
+}
+
+.weather-details span {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.weather-details p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.slide-in-blurred-top {
+  -webkit-animation: slide-in-blurred-top 2s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: slide-in-blurred-top 2s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+@-webkit-keyframes slide-in-blurred-top {
+  0% {
+    -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+    transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-top {
+  0% {
+    -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+    transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.container {
+  /* background-size: cover;
+  background-position: center; */
+
+  position: fixed;
+  left: 0;
+  bottom: -290px;
+  width: 700%;
+  pointer-events: none;
+}
+
+.smoke {
+  opacity: 40%;
+  min-width: 3900px;
+  position: relative;
+  animation-name: smoke;
+  animation-duration: 8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes smoke {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 50px;
+  }
+}
